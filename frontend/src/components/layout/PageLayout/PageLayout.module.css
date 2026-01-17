@@ -1,0 +1,88 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAGE LAYOUT STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LAYOUT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MAIN
+   ───────────────────────────────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8) var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: var(--space-12) var(--space-8);
+  }
+}
+
+.fullWidth .content {
+  max-width: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CONTENT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────────────────────── */
+
+.footer {
+  background: linear-gradient(
+    180deg,
+    var(--color-stone) 0%,
+    var(--color-stone-dark) 100%
+  );
+  border-top: 1px solid var(--color-gold-dark);
+  padding: var(--space-6) var(--space-4);
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footerText {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-parchment-dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.footerGem {
+  color: var(--color-gold);
+  font-size: var(--text-xs);
+}
+
+.footerDisclaimer {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  margin: var(--space-2) 0 0;
+}
