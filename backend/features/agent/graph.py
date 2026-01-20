@@ -656,3 +656,106 @@ async def stream_price_agent_with_thinking(
         })
 
     return result
+
+
+# =============================================
+# 単独ノード実行関数（デバッグ用）
+# =============================================
+async def run_search_node_only(item_name: str, visual_features: list[str] | None = None) -> dict:
+    """
+    Searchノードを直接実行（Visionノードをスキップ）
+
+    Args:
+        item_name: 商品名
+        visual_features: 視覚的特徴のリスト
+
+    Returns:
+        search_output: SearchNodeOutput
+    """
+    from features.agent.vision.schema import InitialAnalysis
+    from features.agent.search.node import search_node
+
+    # Visionノードの出力を模擬して作成
+    mock_analysis = InitialAnalysis(
+        category_type="processable",
+        confidence="high",
+        reasoning="Debug mode: direct input",
+        item_name=item_name,
+        visual_features=visual_features or [],
+    )
+
+    # 模擬状態を作成
+    mock_state = {
+        "messages": [],
+        "retry_count": 0,
+        "analysis_result": mock_analysis,
+    }
+
+    # search_nodeは非同期関数なのでawaitで呼び出し
+    result = await search_node(mock_state)
+
+    return {
+        "search_output": result.get("search_output"),
+        "input": {
+            "item_name": item_name,
+            "visual_features": visual_features,
+        },
+    }
+
+
+async def run_price_node_only(identified_product: str, visual_features: list[str] | None = None) -> dict:
+    """
+    Priceノードを直接実行（Vision/Searchノードをスキップ）
+
+    Args:
+        identified_product: 特定された商品名
+        visual_features: 視覚的特徴のリスト
+
+    Returns:
+        price_output: PriceNodeOutput
+    """
+    from features.agent.vision.schema import InitialAnalysis
+    from features.agent.search.schema import SearchAnalysis, SearchNodeOutput
+    from features.agent.price.node import price_node
+
+    # Visionノードの出力を模擬
+    mock_analysis = InitialAnalysis(
+        category_type="processable",
+        confidence="high",
+        reasoning="Debug mode: direct input",
+        item_name=identified_product,
+        visual_features=visual_features or [],
+    )
+
+    # Searchノードの出力を模擬
+    mock_search_analysis = SearchAnalysis(
+        classification="mass_product",
+        confidence="high",
+        reasoning="Debug mode: direct input",
+        identified_product=identified_product,
+    )
+
+    mock_search_output = SearchNodeOutput(
+        search_results=[],
+        analysis=mock_search_analysis,
+        search_performed=False,
+    )
+
+    # 模擬状態を作成
+    mock_state = {
+        "messages": [],
+        "retry_count": 0,
+        "analysis_result": mock_analysis,
+        "search_output": mock_search_output,
+    }
+
+    # price_nodeは非同期関数なのでawaitで呼び出し
+    result = await price_node(mock_state)
+
+    return {
+        "price_output": result.get("price_output"),
+        "input": {
+            "identified_product": identified_product,
+            "visual_features": visual_features,
+        },
+    }

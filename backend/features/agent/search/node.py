@@ -13,7 +13,7 @@ from features.agent.state import AgentState
 logger = get_logger(__name__)
 
 
-def search_node(state: AgentState) -> dict:
+async def search_node(state: AgentState) -> dict:
     """
     Node B: 画像検索・分類ノード（Grounding with Google Search版）
 
@@ -114,8 +114,8 @@ def search_node(state: AgentState) -> dict:
 
     try:
         # Grounding + 構造化出力で1回のAPI呼び出しで完了
-        # structured_llm.invoke() は SearchAnalysis オブジェクトを直接返す
-        analysis = structured_llm.invoke(messages, tools=[{"google_search": {}}])
+        # structured_llm.ainvoke() は SearchAnalysis オブジェクトを直接返す
+        analysis = await structured_llm.ainvoke(messages, tools=[{"google_search": {}}])
 
         return {
             "search_output": SearchNodeOutput(

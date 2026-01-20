@@ -192,7 +192,7 @@ async def _vision_node_async(state: "AgentState") -> dict:
     return {"analysis_result": analysis}
 
 
-def vision_node(state: "AgentState") -> dict:
+async def vision_node(state: "AgentState") -> dict:
     """
     Vision Node - SerpApi Google Lens統合
 
@@ -202,17 +202,7 @@ def vision_node(state: "AgentState") -> dict:
     4. 結果をInitialAnalysisにマッピング
     """
     try:
-        # 非同期処理を実行
-        loop = asyncio.get_event_loop()
-        if loop.is_running():
-            # 既存のイベントループがある場合（FastAPI内など）
-            import concurrent.futures
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                future = executor.submit(asyncio.run, _vision_node_async(state))
-                return future.result()
-        else:
-            return asyncio.run(_vision_node_async(state))
-
+        return await _vision_node_async(state)
     except Exception as e:
         logger.error(f"Vision node error: {e}", exc_info=True)
         return {
