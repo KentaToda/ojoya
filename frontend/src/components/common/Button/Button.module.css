@@ -1,0 +1,222 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   BUTTON STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE BUTTON
+   ───────────────────────────────────────────────────────────────────────── */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   VARIANTS
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Primary - Golden call to action */
+.primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold) 0%,
+    var(--color-gold-dark) 100%
+  );
+  color: var(--color-ink);
+  border-color: var(--color-gold-light);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold-light) 0%,
+    var(--color-gold) 100%
+  );
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+  transform: translateY(-2px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary - Leather/brown accent */
+.secondary {
+  background: linear-gradient(
+    135deg,
+    var(--color-leather) 0%,
+    var(--color-leather-dark) 100%
+  );
+  color: var(--color-parchment);
+  border-color: var(--color-leather-light);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.secondary:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    var(--color-leather-light) 0%,
+    var(--color-leather) 100%
+  );
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.secondary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ghost - Transparent with border */
+.ghost {
+  background: transparent;
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.ghost:hover:not(:disabled) {
+  background: rgba(201, 162, 39, 0.1);
+  box-shadow: var(--glow-gold);
+}
+
+.ghost:active:not(:disabled) {
+  background: rgba(201, 162, 39, 0.2);
+}
+
+/* Danger - Red warning button */
+.danger {
+  background: linear-gradient(
+    135deg,
+    var(--color-error) 0%,
+    #6B1A1A 100%
+  );
+  color: var(--color-parchment);
+  border-color: var(--color-error-light);
+  box-shadow: var(--shadow-md);
+}
+
+.danger:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    var(--color-error-light) 0%,
+    var(--color-error) 100%
+  );
+  box-shadow: var(--shadow-lg), var(--glow-error);
+  transform: translateY(-2px);
+}
+
+.danger:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SIZES
+   ───────────────────────────────────────────────────────────────────────── */
+
+.sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
+.md {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+}
+
+.lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  border-radius: var(--radius-xl);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MODIFIERS
+   ───────────────────────────────────────────────────────────────────────── */
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LOADING STATE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.loading {
+  pointer-events: none;
+}
+
+.loading .text {
+  opacity: 0.7;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerSvg {
+  width: 1.25em;
+  height: 1.25em;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ICON
+   ───────────────────────────────────────────────────────────────────────── */
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TEXT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.text {
+  display: inline-block;
+}

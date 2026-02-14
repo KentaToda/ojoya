@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   HISTORY PAGE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PAGE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LOADING CONTAINER
+   ───────────────────────────────────────────────────────────────────────── */
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HEADER
+   ───────────────────────────────────────────────────────────────────────── */
+
+.header {
+  text-align: center;
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-black);
+  color: var(--color-gold);
+  margin: 0 0 var(--space-2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-parchment-dark);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SECTION
+   ───────────────────────────────────────────────────────────────────────── */
+
+.section {
+  animation: slideUp var(--transition-normal) ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   NOT AUTHENTICATED STATE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.notAuthState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: 300px;
+  text-align: center;
+}
+
+.notAuthIcon {
+  font-size: var(--text-4xl);
+  opacity: 0.6;
+}
+
+.notAuthText {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-parchment-dark);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DETAIL VIEW
+   ───────────────────────────────────────────────────────────────────────── */
+
+.backSection {
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+.detailImageSection {
+  display: flex;
+  justify-content: center;
+  animation: slideUp var(--transition-normal) ease forwards;
+}
+
+.detailImage {
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gold-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm);
+  }
+}

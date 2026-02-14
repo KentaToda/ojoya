@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   IMAGE PICKER STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DROPZONE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.dropzone {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.dropzone.dragging {
+  background-color: rgba(201, 162, 39, 0.1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CONTENT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-4);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ICON
+   ───────────────────────────────────────────────────────────────────────── */
+
+.iconWrapper {
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TEXT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-black);
+  color: var(--color-gold);
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-parchment-dark);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BUTTONS
+   ───────────────────────────────────────────────────────────────────────── */
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .buttons {
+    flex-direction: row;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ERROR MESSAGE
+   ───────────────────────────────────────────────────────────────────────── */
+
+.error {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-error-light);
+  background-color: var(--color-error-bg);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-error);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HINT
+   ───────────────────────────────────────────────────────────────────────── */
+
+.hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-light);
+  color: var(--color-ink-muted);
+  margin: var(--space-4) 0 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PREVIEW
+   ───────────────────────────────────────────────────────────────────────── */
+
+.previewContainer {
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-gold-dark);
+}
+
+.clearButton {
+  margin-top: var(--space-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .dropzone {
+    min-height: 250px;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .title {
+    font-size: var(--text-xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .previewImage {
+    max-height: 300px;
+  }
+}

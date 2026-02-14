@@ -1,0 +1,359 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   OJOYA RPG THEME - Medieval Fantasy Design System
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────────────────────────────────
+     TYPOGRAPHY
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Font Families - Medieval Elegance */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font Weights - Extreme Contrast */
+  --weight-thin: 100;
+  --weight-light: 200;
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --weight-black: 900;
+
+  /* Font Sizes - 3x+ Contrast Scale */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.25rem;      /* 20px */
+  --text-xl: 1.5rem;       /* 24px */
+  --text-2xl: 2rem;        /* 32px */
+  --text-3xl: 3rem;        /* 48px - 3x base */
+  --text-4xl: 4rem;        /* 64px - 4x base */
+  --text-5xl: 5rem;        /* 80px - 5x base */
+  --text-hero: 6rem;       /* 96px - 6x base */
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     COLOR PALETTE - Fantasy Kingdom
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Primary: Royal Gold */
+  --color-gold: #C9A227;
+  --color-gold-light: #E8D48B;
+  --color-gold-lighter: #F5EBC7;
+  --color-gold-dark: #8B6914;
+  --color-gold-darker: #5C4609;
+
+  /* Secondary: Ancient Parchment */
+  --color-parchment: #F5E6C8;
+  --color-parchment-light: #FBF4E8;
+  --color-parchment-dark: #D4C5A9;
+  --color-parchment-darker: #B8A88C;
+
+  /* Accent: Worn Leather */
+  --color-leather: #5C4033;
+  --color-leather-light: #7A5C4A;
+  --color-leather-dark: #3D2B22;
+  --color-leather-darker: #2A1D17;
+
+  /* Neutral: Ancient Ink */
+  --color-ink: #1A1A1A;
+  --color-ink-light: #2D2D2D;
+  --color-ink-faded: #4A4A4A;
+  --color-ink-muted: #6B6B6B;
+
+  /* Background: Dungeon Stone */
+  --color-stone: #2C2824;
+  --color-stone-light: #3D3731;
+  --color-stone-dark: #1E1B18;
+
+  /* Semantic: Quest Status */
+  --color-success: #2D5A27;       /* Forest Green - Victory */
+  --color-success-light: #4A7F42;
+  --color-success-bg: #1A3317;
+
+  --color-warning: #8B6914;       /* Amber - Caution */
+  --color-warning-light: #B8932A;
+  --color-warning-bg: #3D2F0A;
+
+  --color-error: #8B2222;         /* Blood Red - Danger */
+  --color-error-light: #B83A3A;
+  --color-error-bg: #3D1111;
+
+  --color-info: #1E3A5F;          /* Deep Navy - Knowledge */
+  --color-info-light: #2E5A8F;
+  --color-info-bg: #0F1D2F;
+
+  /* Confidence Levels */
+  --confidence-high: #2D5A27;
+  --confidence-high-bg: rgba(45, 90, 39, 0.15);
+  --confidence-medium: #8B6914;
+  --confidence-medium-bg: rgba(139, 105, 20, 0.15);
+  --confidence-low: #8B4513;
+  --confidence-low-bg: rgba(139, 69, 19, 0.15);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     EFFECTS - Magical Atmosphere
+     ───────────────────────────────────────────────────────────────────────── */
+
+  /* Shadows - Candlelit Ambiance */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-inner: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* Glow Effects - Enchanted Items */
+  --glow-gold: 0 0 20px rgba(201, 162, 39, 0.4);
+  --glow-gold-strong: 0 0 40px rgba(201, 162, 39, 0.6);
+  --glow-success: 0 0 20px rgba(45, 90, 39, 0.4);
+  --glow-error: 0 0 20px rgba(139, 34, 34, 0.4);
+
+  /* Borders - Ornate Frames */
+  --border-thin: 1px solid var(--color-gold-dark);
+  --border-ornate: 2px solid var(--color-gold);
+  --border-heavy: 3px solid var(--color-gold);
+  --border-double: 4px double var(--color-gold);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SPACING - Dungeon Grid
+     ───────────────────────────────────────────────────────────────────────── */
+
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     RADIUS - Scroll Corners
+     ───────────────────────────────────────────────────────────────────────── */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TRANSITIONS - Magical Motion
+     ───────────────────────────────────────────────────────────────────────── */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-slower: 600ms ease;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     Z-INDEX - Layer Order
+     ───────────────────────────────────────────────────────────────────────── */
+
+  --z-base: 0;
+  --z-above: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 500;
+  --z-tooltip: 1000;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Text Styles */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+  line-height: var(--leading-normal);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Decorative Text */
+.text-ornate {
+  font-family: var(--font-display);
+  font-weight: var(--weight-heavy);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.text-thin {
+  font-weight: var(--weight-light);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-parchment {
+  color: var(--color-parchment);
+}
+
+/* Glow Text Effect */
+.text-glow {
+  text-shadow:
+    0 0 10px rgba(201, 162, 39, 0.5),
+    0 0 20px rgba(201, 162, 39, 0.3),
+    0 0 30px rgba(201, 162, 39, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACKGROUND PATTERNS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Parchment Texture */
+.bg-parchment {
+  background-color: var(--color-parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Dark Stone Texture */
+.bg-stone {
+  background-color: var(--color-stone);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.1) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+/* Leather Texture */
+.bg-leather {
+  background-color: var(--color-leather);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Golden Pulse */
+@keyframes goldenPulse {
+  0%, 100% {
+    box-shadow: var(--glow-gold);
+  }
+  50% {
+    box-shadow: var(--glow-gold-strong);
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Spin for Loading */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp var(--transition-slow) ease forwards;
+}
+
+.animate-pulse {
+  animation: goldenPulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.2) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger Animation Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }

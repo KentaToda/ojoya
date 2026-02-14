@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <polygon
+    points="16,4 26,12 23,28 9,28 6,12"
+    fill="url(#gemGradient)"
+    stroke="#C9A227"
+    stroke-width="1.2"
+  />
+  <polygon
+    points="16,4 6,12 9,28 16,22"
+    fill="#C9A227"
+    opacity="0.3"
+  />
+  <polygon
+    points="16,4 16,22 23,28 26,12"
+    fill="#8B6914"
+    opacity="0.5"
+  />
+  <defs>
+    <linearGradient id="gemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D48B"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+  </defs>
+</svg>
